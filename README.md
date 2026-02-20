@@ -4,33 +4,15 @@ Aplicación web de una sola página para practicar escritura en español, con de
 
 ---
 
-## Captura de pantalla
+## Capturas de pantalla
 
-```
-┌─────────────────────────────────────────────────────────┐
-│              Corrector Ortográfico                       │
-│   Detecta errores de ortografía y acentuación en español│
-├──────────────────────────────────────┬──────────────────┤
-│  Escribe tu texto aquí:              │    Resumen        │
-│  ┌────────────────────────────────┐  │  ┌─────────────┐ │
-│  │ Esta mañana fui al cafe y      │  │  │     3       │ │
-│  │ tome un cafe con leche.        │  │  │   errores   │ │
-│  └────────────────────────────────┘  │  ├─────────────┤ │
-│  [✓ Verificar ortografía] [✕ Limpiar]│  │ 🔤 Ortogr. 2│ │
-├──────────────────────────────────────│  │ ✏️ Tipogr. 1│ │
-│  Texto revisado:                     │  └─────────────┘ │
-│  Esta mañana fui al [cafe]~~~ y      │                  │
-│  [tome]~~~ un [cafe]~~~ con leche.   │                  │
-│                          ↑           │                  │
-│            ┌─────────────────────┐   │                  │
-│            │ 🔤 Ortografía       │   │                  │
-│            │ Posible error de    │   │                  │
-│            │ acentuación         │   │                  │
-│            │ Sugerencias:        │   │                  │
-│            │ [café] [tomé]       │   │                  │
-│            └─────────────────────┘   │                  │
-└─────────────────────────────────────────────────────────┘
-```
+### Estado inicial
+
+![Pantalla inicial de la aplicación](images/screenshot-inicial.png)
+
+### Resultado tras verificar ortografía
+
+![Texto revisado con errores subrayados y panel de resumen](images/screenshot-resultado.png)
 
 ---
 
@@ -64,11 +46,13 @@ Aplicación web de una sola página para practicar escritura en español, con de
 
 ```
 DeteccionOrtografia/
-├── index.html   # Estructura HTML de la aplicación
-├── style.css    # Estilos y diseño visual
-├── app.js       # Lógica de la aplicación
-├── README.md    # Este archivo
-└── CLAUDE.md    # Guía para trabajar con Claude Code
+├── index.html        # Estructura HTML de la aplicación
+├── style.css         # Estilos y diseño visual
+├── app.js            # Lógica de la aplicación
+├── images/
+│   ├── screenshot-inicial.png    # Captura del estado inicial
+│   └── screenshot-resultado.png  # Captura con errores detectados
+└── README.md         # Este archivo
 ```
 
 ---
