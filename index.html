@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detección de Ortografía en Español</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>Corrector Ortográfico</h1>
+      <p class="subtitle">Detecta errores de ortografía y acentuación en español</p>
+    </header>
+
+    <main>
+      <div class="editor-panel">
+        <label for="inputText">Escribe o pega tu texto aquí:</label>
+        <textarea
+          id="inputText"
+          placeholder="Ejemplo: Esta mañana fui al cafe y tome un cafe con leche. El niño es muy intelijente."
+          spellcheck="false"
+        ></textarea>
+
+        <div class="editor-actions">
+          <button id="checkBtn">
+            <span class="btn-icon">✓</span>
+            Verificar ortografía
+          </button>
+          <button id="clearBtn" class="btn-secondary">
+            <span class="btn-icon">✕</span>
+            Limpiar
+          </button>
+          <span id="charCount" class="char-count">0 caracteres</span>
+        </div>
+      </div>
+
+      <div class="results-section" id="resultsSection" style="display:none;">
+        <div class="annotated-panel">
+          <h2>Texto revisado</h2>
+          <div id="annotatedText" class="annotated-text"></div>
+          <p class="annotated-hint">Haz clic en las palabras subrayadas para ver sugerencias de corrección.</p>
+        </div>
+
+        <aside class="summary-panel">
+          <h2>Resumen</h2>
+          <div id="errorSummary" class="error-summary">
+            <div class="summary-total">
+              <span class="total-count" id="totalCount">0</span>
+              <span class="total-label">errores encontrados</span>
+            </div>
+            <ul id="categoryList" class="category-list"></ul>
+          </div>
+        </aside>
+      </div>
+
+      <div id="noErrorsMsg" class="no-errors-msg" style="display:none;">
+        <span class="success-icon">✓</span>
+        <p>¡Sin errores detectados! Tu texto está correcto.</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- Popup de sugerencias -->
+  <div id="popup" class="popup" role="tooltip" style="display:none;">
+    <div class="popup-header">
+      <span class="popup-category" id="popupCategory"></span>
+      <button class="popup-close" id="popupClose" aria-label="Cerrar">✕</button>
+    </div>
+    <p class="popup-message" id="popupMessage"></p>
+    <div class="popup-suggestions">
+      <p class="suggestions-label">Sugerencias:</p>
+      <div id="suggestionsList" class="suggestions-list"></div>
+    </div>
+    <div class="popup-ignore">
+      <button class="btn-ignore" id="btnIgnore">Ignorar error</button>
+    </div>
+  </div>
+
+  <!-- Overlay para cerrar popup al hacer clic fuera -->
+  <div id="overlay" class="overlay" style="display:none;"></div>
+
+  <!-- Indicador de carga -->
+  <div id="loadingIndicator" class="loading-indicator" style="display:none;">
+    <div class="spinner"></div>
+    <span>Verificando texto...</span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
